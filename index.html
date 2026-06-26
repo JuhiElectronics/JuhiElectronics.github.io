@@ -5,39 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juhi Electronics | Premium Electronics in Gaya Ji</title>
     <style>
-        /* CSS Styles */
+       /* CSS Styles - Apple Inspired Theme */
         :root {
-            --primary-color: #00f2fe;
-            --secondary-color: #4facfe;
-            --bg-color: #0a0a0a;
-            --surface-color: #1a1a1a;
-            --text-light: #ffffff;
-            --text-muted: #a0a0a0;
+            --apple-blue: #0071e3;
+            --bg-color: #ffffff;
+            --surface-color: #f5f5f7; /* Apple's signature light gray */
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* This forces the website to use Apple's official fonts if available */
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-light);
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
         }
 
-        /* Header & Navigation */
+        /* Header & Navigation (Apple Style Translucent Navbar) */
         header {
-            background-color: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #333;
             transition: 0.3s;
         }
 
@@ -45,31 +46,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            max-width: 1400px;
+            padding: 14px 5%;
+            max-width: 1000px; /* Apple navbars are usually narrower */
             margin: 0 auto;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            color: #f5f5f7;
+            letter-spacing: 1px;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: #f5f5f7;
             text-decoration: none;
             margin-left: 30px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            opacity: 1;
         }
 
         /* Hero Section */
@@ -79,40 +80,47 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-color) 100%);
+            background: #ffffff;
             padding: 0 20px;
         }
 
+        .hero-content {
+            margin-top: 50px;
+        }
+
         .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.005em;
+            margin-bottom: 15px;
+            color: #1d1d1f;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
+            font-size: 24px;
+            font-weight: 400;
+            color: #1d1d1f;
             max-width: 600px;
             margin: 0 auto 30px auto;
         }
 
+        /* Apple's Signature Pill Button */
         .btn {
             display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            color: #000;
+            padding: 12px 24px;
+            background: var(--apple-blue);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 400;
+            font-size: 17px;
+            border-radius: 980px; /* Makes it a perfect pill shape */
+            transition: background 0.3s;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.4);
+            background: #0077ed;
         }
 
         /* Products Section */
@@ -120,55 +128,68 @@
             padding: 100px 5%;
             max-width: 1400px;
             margin: 0 auto;
+            background-color: var(--bg-color);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 40px;
+            font-weight: 600;
             margin-bottom: 50px;
-            color: var(--text-light);
+            color: #1d1d1f;
+            letter-spacing: -0.005em;
         }
 
         .section-title span {
-            color: var(--primary-color);
+            color: var(--apple-blue);
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 20px; /* Apple uses tighter gaps */
         }
 
+        /* Apple Style Cards */
         .card {
             background-color: var(--surface-color);
             padding: 40px 20px;
-            border-radius: 15px;
+            border-radius: 18px; /* Apple's smooth rounded corners */
             text-align: center;
-            transition: 0.4s;
-            border: 1px solid #333;
+            transition: transform 0.4s;
+            border: none; /* Apple doesn't use borders here */
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+            transform: scale(1.02); /* Very subtle zoom effect */
         }
 
         .card h3 {
-            font-size: 1.5rem;
-            margin: 20px 0 15px;
-            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: #1d1d1f;
         }
 
         .card p {
-            color: var(--text-muted);
+            font-size: 17px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain; /* Shows the whole product clearly */
+            margin-bottom: 15px;
         }
 
         /* About Section */
         #about {
-            background-color: var(--surface-color);
+            background-color: #ffffff;
             padding: 100px 5%;
             text-align: center;
+            border-top: 1px solid #d2d2d7;
         }
 
         .about-container {
@@ -177,12 +198,14 @@
         }
 
         .about-container h2 {
-            font-size: 2.5rem;
+            font-size: 40px;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: #1d1d1f;
         }
 
         .about-container p {
-            font-size: 1.1rem;
+            font-size: 17px;
             color: var(--text-muted);
             margin-bottom: 20px;
         }
@@ -191,45 +214,44 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            border: 1px solid var(--primary-color);
-            border-radius: 20px;
-            color: var(--primary-color);
-            font-weight: bold;
+            border: 1px solid #d2d2d7;
+            border-radius: 980px;
+            color: #1d1d1f;
+            font-size: 14px;
         }
 
         /* Footer */
         footer {
-            background-color: #050505;
-            padding: 50px 5%;
+            background-color: var(--surface-color);
+            padding: 40px 5%;
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid #d2d2d7;
         }
 
         .footer-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+            font-size: 17px;
+            font-weight: 600;
         }
 
         .footer-content p {
             color: var(--text-muted);
+            font-size: 12px;
             margin-bottom: 10px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Can be upgraded to a hamburger menu later */
+                display: none;
             }
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 40px;
             }
-        }
-        .product-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            .hero-content p {
+                font-size: 19px;
+            }
         }
     </style>
 </head>
